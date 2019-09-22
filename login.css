@@ -1,0 +1,25 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    background: url();      
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background: rgb(131, 131, 131);
+}
+/*comment*/
+
+.loginbox{
+
+    padding: 20px;
+    width: 600px;
+    height: 360px;
+    background: rgb(41, 41, 41);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform : translate(-50%, -50%);
+    box-sizing: border-box;
+}
