@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Forum</title>
+        <meta charset = 'UTF-8'>
+        
+        <link rel = "stylesheet" type="text/css" href="forum.css"> 
+    </head>
+
+    <body class = "forum-body">
+            <header class = "header">
+                    <div class = "puppyforums">
+                        <h1>Puppy Forums</h1>
+                    </div>
+                    <div class = "writeforum">
+                        <img class = "pencil" alt = "Avatar" src = "pictures/writing_icon.png" onclick = "openForm()">
+                        <p>Start a forum!</p>
+                    </div>
+                    <div class = "dogpic">
+                        <img class = "maltese" alt = "Avatar" src = "pictures/maltese.jpg">
+                    </div>
+
+                    <div class="forum-popup" id="myForm">
+                        <!-- <forum action="/action_page.php" class="forum-container"> -->
+                            <form class="forum-container">
+                            <h2 for = "title"><b>Title</b></h2>
+                            <input type = "title" placeholder = "Enter Title Name" name = "title" required>
+                        
+                            <h2 for = "text"><b>Text</b></h2>
+                            <textarea rows = "5" cols = "62" placeholder = "Text(Optional)" name = "textarea"> </textarea>
+                            <button type = "submit" class = "button" id = "post">Post</button>
+                            <button type = "submit" class = "button cancel" onclick = "closeForm()">Close</button>
+                        </form>
+                    </div>
+                </header>
+        <main>
+            <div class = userpage>
+                <p align = "center">Welcome back user!</p><br>
+                <img class = "avatar" alt = "Avatar" src = "pictures/IBM.jpg"> <br>
+                <p align = "left">Followers: 0</p>
+                <p align = "left">Connections: 0</p>
+            </div>
+            <ul id = "forumbox" class = "flex-container"></ul>
+
+        </main>
+
+        <section>
+
+        </section>
+        
+    </body>
+
+    <script src="forum.js"></script>
+</html>
