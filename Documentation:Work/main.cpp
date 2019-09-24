@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<vector>
 
 using namespace std;
 
@@ -8,25 +9,47 @@ using namespace std;
 Classes
 -------------------------------------------
 */
-class Connections
+
+class Community	// Class to store info of each Community
 {
 public:
-
+	Community(string name) { communityName = name; };
+	string communityName;
+	void addMember(string newMember) { users.push_back(newMember); }
 private:
-	string userName;
-	string connectedBy[100]; // array of communities you share with this user
+	vector<string> users;
 };
 
-class User
+class Connection	// Class to show all related communities with certain user
+{
+public:
+	Connection(string name) { userName = name; }
+	string userName;
+	vector<string> sharedCommunities;
+	void newConnection(Community community) { sharedCommunities.push_back(community.communityName); };
+};
+
+class User	// Class to store info of each user
 {
 public:
 	User(string user, string pass);
-	void joinCommunity(string communityName);
+	void joinCommunity(Community community);
 private:
 	string username;
 	string password;
-	string interests[10];
-	Connections relatedUsers[10];
+
+	vector<Community> interests;
+	vector<Connection> relatedUsers;
+};
+
+class Network	// Class to contain all content of the application
+{
+public:
+	void addUser(User newUser) { allUsers.push_back(newUser); }
+	void addCommunity(Community newCommunity) { allInterests.push_back(newCommunity); };
+private:
+	vector<User> allUsers;
+	vector<Community> allInterests;
 };
 
 /*
@@ -37,14 +60,26 @@ END OF Classes
 
 int main(void)
 {
+	Network app;
+
 	User temp1("bob", "123");
 	User temp2("bill", "it12");
 	User temp3("mark", "fb12");
 
-	temp1.joinCommunity("cpsc362");
-	temp2.joinCommunity("cpsc362");
-	temp3.joinCommunity("cpsc362");
+	app.addUser(temp1);
+	app.addUser(temp2);
+	app.addUser(temp3);
 
+	Community CPSC362("CPSC362");
+	Community CPSC401("CPSC401");
+
+	app.addCommunity(CPSC362);
+	app.addCommunity(CPSC401);
+
+	temp1.joinCommunity(CPSC362);
+	temp1.joinCommunity(CPSC401);
+	temp2.joinCommunity(CPSC401);
+	temp3.joinCommunity(CPSC362);
 
 	return 0;
 }
@@ -61,17 +96,9 @@ User::User(string user, string pass)
 	password = pass;
 }
 
-void User::joinCommunity(string communityName)
+void User::joinCommunity(Community community)
 {
-	for (int i = 0; i < 10; i++)
-	{
-		if (interests[i] == "\0")
-		{
-			interests[i] = communityName;
-			cout << username << " has joined the " << interests[i] << " community!" << endl;
-			break;
-		}
-		else
-			continue;
-	}
+	interests.push_back(community);
+	cout << username << " has joined " << community.communityName << "!" << endl;
+	community.addMember(username);
 }
