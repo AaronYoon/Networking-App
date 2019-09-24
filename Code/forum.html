@@ -18,17 +18,16 @@
                     <div class = "dogpic">
                         <img class = "maltese" alt = "Avatar" src = "pictures/maltese.jpg">
                     </div>
-
-                    <div class="forum-popup" id="myForm">
+                    <div class = "forum-popup" id = "myForm">
                         <!-- <forum action="/action_page.php" class="forum-container"> -->
-                            <form class="forum-container">
+                            <form class = "forum-container">
                             <h2 for = "title"><b>Title</b></h2>
                             <input type = "title" placeholder = "Enter Title Name" name = "title" required>
                         
                             <h2 for = "text"><b>Text</b></h2>
                             <textarea rows = "5" cols = "62" placeholder = "Text(Optional)" name = "textarea"> </textarea>
-                            <button type = "submit" class = "button" id = "post">Post</button>
-                            <button type = "submit" class = "button cancel" onclick = "closeForm()">Close</button>
+                            <button type = "submit" class = "button" id = "post" onclick="postForum()">Post</button>
+                            <button type = "submit" class = "button cancel" onclick = "closeForum()">Close</button>
                         </form>
                     </div>
                 </header>
@@ -39,7 +38,29 @@
                 <p align = "left">Followers: 0</p>
                 <p align = "left">Connections: 0</p>
             </div>
-            <ul id = "forumbox" class = "flex-container"></ul>
+
+            <!-- Sample HARD CODED Forum posts... Need to get it appending new forums when posted -->
+            <div class = forumpost>
+                <ul id = "forumbox" class = "flex-container"> 
+                    <h3>Cute Dog Videos</h3>
+                </ul><br>
+                <ul> Check out this cute puppy video tripping!</ul>
+            </div>
+            <div class = forumpost>
+                <ul id = "forumbox" class = "flex-container"> 
+                    <h3>Have a wooftastic day!</h3>
+                </ul><br>
+                <ul> Here are some coupons for dog food and supplies at PetShop! </ul>
+            </div>
+            <div class = forumpost>
+                <ul id = "forumbox" class = "flex-container"> 
+                    <h3>Dog Abuser >:( </h3>
+                </ul><br>
+                <ul>Help me sign this petition to get this person into jail! Make a difference a change in the world.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam nibh, rhoncus eu posuere nec, blandit et diam. Integer laoreet elit enim, 
+                sit amet vulputate nisi imperdiet id. In felis turpis, malesuada vel vestibulum bibendum, tristique vel sem. Mauris semper aliquam facilisis. Morbi 
+                sodales aliquam tempus. Ut eu eros at turpis dictum condimentum et scelerisque tortor. Quisque ut odio sit amet mauris eleifend bibendum. Nam hendrerit, tellus in venenatis imperdiet, velit dolor faucibus augue, at efficitur turpis tellus eget urna. Aliquam eros neque, aliquam vel ipsum a, aliquet rutrum est. In finibus orci nunc, sed ultrices nulla aliquam quis.</ul>
+            </div>
 
         </main>
 

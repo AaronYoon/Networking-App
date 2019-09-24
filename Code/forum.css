@@ -4,6 +4,8 @@
     display: flex;
     flex: 0 1 auto;
     border: none;
+    margin: 15px;
+    
     /*border-bottom: 2px solid rgb(134, 241, 255);*/
     color: rgb(0, 0, 0);
     background-color: rgb(194, 194, 194);
@@ -47,6 +49,7 @@ body{
 .main{
     display: flex;
     flex: 1 1 auto;
+    padding: 15px;
 }
 
 /* User box */
@@ -157,6 +160,15 @@ body{
     display: inline-block;
     text-align: center;
 }
+
+.forumpost{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(194, 194, 194);
+    padding: 10px;
+    margin: 10px;
+    width: 70%;
+}
+
 ul li{
-    display: inline;
 }
