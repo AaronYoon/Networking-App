@@ -5,8 +5,7 @@
     flex: 0 1 auto;
     border: none;
     margin: 15px;
-    
-    /*border-bottom: 2px solid rgb(134, 241, 255);*/
+    border: 2px solid;
     color: rgb(0, 0, 0);
     background-color: rgb(194, 194, 194);
 }
@@ -52,6 +51,12 @@ body{
     padding: 15px;
 }
 
+.sidebar{
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
 /* User box */
 
 .userpage{
@@ -61,7 +66,7 @@ body{
     flex: 1;
     order: 1;
     padding: 15px;
-    border: solid 3px;
+    border: solid 2px;
     flex-direction: column;
     background-color: rgb(194, 194, 194);
 }
@@ -70,6 +75,23 @@ body{
     width: 200;
     height: 130;
     border-radius: 50%
+}
+
+/* Legal flex box*/
+.legal{
+    margin: 0px 20 15px 40;
+    display: flex;
+    width: 230px;
+    float: left;
+    flex: 1;
+    order: 1;
+    flex-wrap: wrap;
+    font-size: 12px;
+    justify-content: space-evenly;
+    border: solid 2px;
+    flex-direction: row;
+    background-color: rgb(194, 194, 194);
+
 }
 
 
@@ -100,6 +122,7 @@ body{
 
 .forum-container {
   width: 800px;
+  height: 500px;
   padding: 10px;
   background-color: rgb(194, 194, 194);
 }
@@ -114,6 +137,7 @@ body{
 
 .forum-container [name = "textarea"] {
     width: 100%;
+    height: 40%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
@@ -134,9 +158,6 @@ body{
   margin-bottom:10px;
   opacity: 0.8;
   text-align: center;
-}
-.forum-container .button {
-
 }
 
 /* Creating a new forum post */
@@ -164,11 +185,10 @@ body{
 .forumpost{
     display: flex;
     flex-direction: column;
+    border: 2px solid;
+    order: 3;
     background-color: rgb(194, 194, 194);
     padding: 10px;
     margin: 10px;
     width: 70%;
-}
-
-ul li{
 }
