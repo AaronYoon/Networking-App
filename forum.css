@@ -1,0 +1,198 @@
+/* css for the forum html file */
+
+.header{
+    display: flex;
+    flex: 0 1 auto;
+    border: none;
+    margin: 15px;
+    
+    /*border-bottom: 2px solid rgb(134, 241, 255);*/
+    color: rgb(0, 0, 0);
+    background-color: rgb(194, 194, 194);
+}
+.puppyforums{
+    flex: 8;
+    order:1;
+    padding: 10px;
+    font-size: 25px;
+    display: inline-block;
+    justify-content: center;
+}
+.writeforum{
+    flex: 1;
+    order: 2;
+    align-self: flex-end;
+}
+.dogpic{
+    flex: 1;
+    order: 3;
+    padding: 10px;
+    align-self: center;
+}
+body{
+    background-size: cover;
+    font-family: sans-serif;
+    background: rgb(131, 131, 131);
+}
+.maltese{
+    width: 200;
+    height: 130;
+}
+.pencil{
+    width: 50px;
+    height: 50px;
+}
+.forum-body{
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    display: flex;
+    flex: 1 1 auto;
+    padding: 15px;
+}
+
+.sidebar{
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
+/* User box */
+
+.userpage{
+    margin: 40px 40 40px 40;
+    display: flex;
+    float: left;
+    flex: 1;
+    order: 1;
+    padding: 15px;
+    border: solid 2px;
+    flex-direction: column;
+    background-color: rgb(194, 194, 194);
+}
+
+.avatar{
+    width: 200;
+    height: 130;
+    border-radius: 50%
+}
+
+/* Legal flex box*/
+.legal{
+    margin: 5px 20 15px 40;
+    display: flex;
+    width: 230px;
+    float: left;
+    flex: 1;
+    order: 1;
+    flex-wrap: wrap;
+    font-size: 12px;
+    justify-content: space-evenly;
+    border: solid 2px;
+    flex-direction: row;
+    background-color: rgb(194, 194, 194);
+
+}
+
+
+/* Creating a new form */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 15px 17px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup forum - hidden by default */
+.forum-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  font-family: sans-serif;
+}
+
+.forum-container {
+  width: 800px;
+  padding: 10px;
+  background-color: rgb(194, 194, 194);
+}
+
+.forum-container input[type = title]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.forum-container [name = "textarea"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+.forum-container input[type = title]:focus, .forum-container [name = "textarea"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.forum-container .button {
+  background-color: rgb(129, 129, 129);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  width: 49%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  text-align: center;
+}
+.forum-container .button {
+
+}
+
+/* Creating a new forum post */
+
+.flex-container{
+    padding: 0;
+    margin: 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex-item{
+    padding: 15px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-right: 15px;
+    line-height: 150px;
+    display: inline-block;
+    text-align: center;
+}
+
+.forumpost{
+    display: flex;
+    flex-direction: column;
+    order: 3;
+    background-color: rgb(194, 194, 194);
+    padding: 10px;
+    margin: 10px;
+    width: 70%;
+}
+
+ul li{
+}
