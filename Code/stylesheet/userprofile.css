@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex: 0 1 auto;
+    border: none;
+    margin: 15px;
+    border: 2px solid;
+    color: rgb(0, 0, 0);
+    background-color: rgb(194, 194, 194);
+}
+
+.avatar{
+    width: 200;
+    height: 130;
+    border-radius: 50%;
+}
