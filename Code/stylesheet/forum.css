@@ -201,3 +201,18 @@ body{
     margin: 10px;
     width: 90%;
 }
+
+.usermenu{
+    margin: 40px 40 40px 40;
+    display: flex;
+    float: left;
+    flex: 1;
+    order: 1;
+    flex-direction: column;
+    background-color: rgb(0, 194, 194);
+}
+
+ .envelope{
+   height: 50%;
+   width: 50%;
+ }
