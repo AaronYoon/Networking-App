@@ -1,0 +1,16 @@
+Things to get done:
+-Finish user profile
+-Implement login authentication
+  >Is going to be done in JS
+-Create pages for terms, index, privacy, cookies
+-Convert class structure form C++ to C#
+-Initialize Firebase database
+-Implement forum posting
+
+
+
+Things done:
+-Create login
+-Create home page
+-Decide on database to use
+  >Chose firebase
