@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Forum</title>
+        <meta charset = 'UTF-8'>
+        
+        <link rel = "stylesheet" type="text/css" href="stylesheet/forum.css"> 
+        <script src="user.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-app.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-firestore.js"></script>
+        <script src="/__/firebase/6.6.2/firebase-auth.js"></script>
+        <script src="/__/firebase/6.6.2/firebase-storage.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        
+    </head>
+
+    <body class = "forum-body">
+        <header class = "header">
+                <div class = "User Profile Page">
+                    <h1>User Profile Page</h1>
+                </div> 
+                <input type="button" value="Logout" id="LOGOUTBTN" /><br />
+        </header>
+        <main>
+            <section class = "sidebar">
+                <div class = userpage>
+                    <p align = "center" id="USERNAME">Welcome back user!</p><br>
+                    <a href = "userprofile.html"><img class = "avatar" alt = "Avatar" src = "pictures/IBM.jpg" href = "userprofile.html" id="USERIMG"></a><br>
+                    <p align = "left">Connections: 0</p>
+                    <p align = "left">Following Forums: 1</p>
+                </div>
+
+                <div class = "legal">
+                        <p>   <a class = "link" href = "terms.html">Terms</a>   </p>
+                        <p>   <a class = "link" href = "privacy.html">Privacy</a>   </p>
+                        <p>   <a class = "link" href = "policy.html">Policy</a>   </p>
+                        <p>   <a class = "link" href = "cookies.html">Cookies</a>   </p>
+                </div>
+
+            </section>
+            <section>
+                <input type="file" id="myFile" multiple size="50" onchange="upload();">
+            </section>
+             
+        </main>
+
+    </body>
+
+</html>
+
+
+<!-- Terms privacy policy cookies ads info -->

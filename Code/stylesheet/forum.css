@@ -71,7 +71,7 @@ body{
     background-color: rgb(194, 194, 194);
 }
 
-.avatar{
+.sidebar #avatar{
     width: 200;
     height: 130;
     border-radius: 50%
@@ -89,6 +89,7 @@ body{
     font-size: 12px;
     justify-content: space-evenly;
     border: solid 2px;
+    padding: 10 0 10 0;         /* N E S W*/
     flex-direction: row;
     background-color: rgb(194, 194, 194);
 }
@@ -201,23 +202,3 @@ body{
     margin: 10px;
     width: 90%;
 }
-
-.usermenu{
-    margin: 40px 40 40px 40;
-    display: flex;
-    float: left;
-    flex: 1;
-    order: 1;
-    flex-direction: column;
-    background-color: rgb(0, 194, 194);
-}
-
- .envelope{
-   height: 55px;
-   width: 55px;
- }
-
- .add{
-   height: 55px;
-   width: 55px;
- }

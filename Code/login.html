@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset = 'UTF-8' />
+        <link rel="stylesheet" type="text/css" href="stylesheet/login.css" />
+		<script src="/__/firebase/6.6.2/firebase-app.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-firestore.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-auth.js"></script>
+		<script src="/__/firebase/init.js"></script>
+    </head>
+	<body>
+		<div class="loginbox">
+			<h1 align="center">Networking App</h1>
+			<h2>Login Here</h2>
+			<form>
+				<p>EMail Address</p>
+				<input type = "text" placeholder = "Enter Email Address" id = "EMAIL" />
+
+				<p>Password</p>
+				<input type = "password" placeholder = "Enter Password" id = "PASSWORD" /><br />
+				<input type = "button" value = "Login" id = "LOGINBTN" /><br />
+
+				<span id="ERRORTXT"></span>
+				
+				<div>
+				<img class="avatar" alt="Avatar" src="pictures/bro.jpg" />
+				<ul>   <a class = "link" href = "newUser.html">New User?</a>   </ul>
+				</div>
+				
+			</form>
+		</div>
+		
+		<script src="/login.js"></script>
+	</body>
+</html>

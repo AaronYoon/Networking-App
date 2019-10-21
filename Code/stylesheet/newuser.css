@@ -1,0 +1,54 @@
+/* CSS for login.html */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url();      
+    background-size: cover;
+    font-family: sans-serif;
+    background: rgb(131, 131, 131);
+}
+
+.signupbox{
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+    background: rgb(41, 41, 41);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform : translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+.loginbox input{
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type = "text"], input[type = "password"]{
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: rgb(101, 199, 199);
+    outline: none;
+    padding: 3px;
+}
+
+.loginbox input[type = "submit"] {
+    background-color: #fff;
+    color: black;
+    width: 100%;
+}
+
+.text{
+    padding: 10px;
+}
+  
+.avatar {
+    width: 40%;
+    right: 5%;
+    bottom: 10%;
+    position: absolute;
+}

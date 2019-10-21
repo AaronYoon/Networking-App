@@ -1,0 +1,28 @@
+.body{
+    display: flex;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(194, 194, 194);
+    margin: 15px;
+    border: solid 2px;
+}
+
+.bodytext{
+    flex-direction: column;
+    background: rgb(131, 131, 131);
+    width: 90%;
+    margin-left: 5%;
+}
+
+.longtext{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(194, 194, 194);
+    padding: 15px;
+    margin: 15px;
+    flex-direction: column;
+    border: solid 2px;
+}

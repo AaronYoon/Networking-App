@@ -4,47 +4,52 @@
         <meta charset = 'UTF-8'>
         
         <link rel = "stylesheet" type="text/css" href="stylesheet/forum.css"> 
+        <link rel="stylesheet" type="text/css" href="stylesheet/login.css" />
+		<script src="/__/firebase/6.6.2/firebase-app.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-firestore.js"></script>
+		<script src="/__/firebase/6.6.2/firebase-auth.js"></script>
+		<script src="/__/firebase/init.js"></script>
     </head>
 
     <body class = "forum-body">
-            <header class = "header">
-                    <div class = "puppyforums">
-                        <h1>Puppy Forums</h1>
-                    </div> 
-                    <div class = "writeforum">
-                        <img class = "pencil" alt = "Avatar" src = "pictures/writing_icon.png" onclick = "openForum()">
-                        <p>Start a forum!</p>
-                    </div>
-                    <div class = "dogpic">
-                        <img class = "maltese" alt = "Avatar" src = "pictures/maltese.jpg">
-                    </div>
-                    <div class = "forum-popup" id = "myForm">
-                        <!-- <forum action="/action_page.php" class="forum-container"> -->
-                            <form class = "forum-container">
-                            <h2 for = "title"><b>Title</b></h2>
-                            <input type = "title" placeholder = "Enter Title Name" name = "title" required>
-                        
-                            <h2 for = "text"><b>Text</b></h2>
-                            <textarea rows = "5" cols = "62" placeholder = "Text(Optional)" name = "textarea"> </textarea>
-                            <button type = "submit" class = "button" id = "post" onclick="postForum()">Post</button>
-                            <button type = "submit" class = "button cancel" onclick = "closeForum()">Close</button>
-                        </form>
-                    </div>
-                </header>
+        <header class = "header">
+            <div class = "puppyforums">
+                <h1>Puppy Forums</h1>
+            </div> 
+            <div class = "writeforum">
+                <img class = "pencil" alt = "Avatar" src = "pictures/writing_icon.png" onclick = "openForum()">
+                <p>Start a forum!</p>
+            </div>
+            <div class = "dogpic">
+                <img class = "maltese" alt = "Avatar" src = "pictures/maltese.jpg">
+            </div>
+            <div class = "forum-popup" id = "myForm">
+                <!-- <forum action="/action_page.php" class="forum-container"> -->
+                    <form class = "forum-container">
+                    <h2 for = "title"><b>Title</b></h2>
+                    <input type = "title" placeholder = "Enter Title Name" name = "title" required>
+                
+                    <h2 for = "text"><b>Text</b></h2>
+                    <textarea rows = "5" cols = "62" placeholder = "Text(Optional)" name = "textarea"> </textarea>
+                    <button type = "submit" class = "button" id = "post" onclick="postForum()">Post</button>
+                    <button type = "submit" class = "button cancel" onclick = "closeForum()">Close</button>
+                </form>
+            </div>
+        </header>
         <main>
             <section class = "sidebar">
                 <div class = userpage>
                     <p align = "center">Welcome back user!</p><br>
-                    <a href = "userprofile.html"><img class = "avatar" alt = "Avatar" src = "pictures/IBM.jpg" href = "userprofile.html"></a><br>
+                    <a href = "userprofile.html"><img id = "avatar" alt = "Avatar" src = "pictures/IBM.jpg" href = "userprofile.html"></a><br>
                     <p align = "left">Connections: 0</p>
                     <p align = "left">Following Forums: 1</p>
                 </div>
 
                 <div class = "legal">
-                        <p>   <a class = "link" href = "terms.html">Terms</a>   </p>
-                        <p>   <a class = "link" href = "privacy.html">Privacy</a>   </p>
-                        <p>   <a class = "link" href = "policy.html">Policy</a>   </p>
-                        <p>   <a class = "link" href = "cookies.html">Cookies</a>   </p>
+                        <a class = "link" href = "terms.html">Terms</a>
+                        <a class = "link" href = "privacy.html">Privacy</a>
+                        <a class = "link" href = "policy.html">Policy</a>
+                        <a class = "link" href = "cookies.html">Cookies</a>
                 </div>
 
             </section>
@@ -78,14 +83,8 @@
                     </ul><br>
                     <ul> Here are some coupons for dog food and supplies at PetShop! </ul>
                 </div>
-
             </section>
-            
-
-        
-
         </main>
-
     </body>
 
     <script src="forum.js"></script>
