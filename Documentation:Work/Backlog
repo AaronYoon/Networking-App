@@ -1,11 +1,9 @@
 Things to get done:
--Finish user profile
--Implement login authentication
-  >Is going to be done in JS
--Create pages for terms, index, privacy, cookies
--Convert class structure form C++ to C#
--Initialize Firebase database
 -Implement forum posting
+-Implement login authentication
+-database rules and cloud functions
+-firebase storage
+-
 
 
 
@@ -16,3 +14,7 @@ Things done:
   >Chose firebase
 -Create basic class structure
   >Used C++
+-Finish user profile
+-Create pages for terms, index, privacy, cookies
+-Initialize Firebase database
+>using .Net Core razor pages
