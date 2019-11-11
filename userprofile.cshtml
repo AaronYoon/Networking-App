@@ -1,0 +1,76 @@
+﻿@page
+@model CPSC361_ClassProject.Pages.userprofileModel
+@{
+    ViewData["Title"] = "userprofile";
+}
+
+<html>
+<head>
+    <title>@Model.userLabel's profile</title>
+    <meta charset='UTF-8'>
+    <script src="~/js/userProfile.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/userprofile.css">
+
+</head>
+<body>
+    <div class=left>
+        <div class=userName>
+            <a href="userprofile.html"><img class="avatar" alt="Avatar" src="images/IBM.jpg" href="userprofile.html"></a><br>
+            <h1 class=profileName>
+                <label asp-for="userLabel">@Model.userLabel</label>
+            </h1>
+        </div>
+        <div class="usermenu">
+            <button class="menuButton" onclick="openForum()">
+                <img class="envelope" alt="Message the User" src="images/message.png" />
+                <p align="center">Message!</p>
+            </button>
+            <button class="menuButton" onclick="@Model.addUser()">
+                <img class="add" alt="Add a friend" src="images/add.png" />
+                <p align="center">
+                    <label asp-for="addFriendLabel">@Model.addFriendLabel</label>
+                </p>
+            </button>
+            <button class="menuButton" onclick="@Model.blockUser()">
+                <img class="block" alt="Block person" src="images/block.png" />
+                <p align="center">
+                    <label asp-for="blockLabel">@Model.blockLabel</label>
+                </p>
+            </button>
+        </div>
+        <div class="forum-popup" id="sendBox" method="sendMessage">
+            <form class="forum-container">
+                <h2 for="title"><b>Message for <label asp-for="userLabel">@Model.userLabel</label></b></h2>
+                <textarea rows="5" cols="40" placeholder="Please write your message here" name="messageArea" id="messageArea" required> </textarea>
+                <button type="submit" class="button" id="send" onclick="@Model.sendMessage()">Send</button>
+                <button type="submit" class="button cancel" onclick="closeForum()">Close</button>
+            </form>
+        </div>
+    </div>
+    <div class=right>
+        <div class="about">            
+            <p>
+                <label asp-for="aboutUser">@Model.aboutUser</label>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    soundcloud!
+                </a>
+            </p>
+        </div>
+        <div class="shared">
+            <h1>Shared interests:</h1>
+            <ul>
+                <li>Dogs</li>
+                <li>Cars</li>
+                <li>Cooking</li>
+                <li>Taxidermy</li>
+            </ul>
+        </div>
+
+
+    </div>
+ <script src="~/js/firebaseScript.js"></script>
+</body>
+
+
+</html>
+
