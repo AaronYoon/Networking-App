@@ -38,17 +38,16 @@
                 </p>
             </button>
         </div>
-        <div class="forum-popup" id="sendBox" method="sendMessage">
-            <form class="forum-container">
+        <div class="forum-popup" id="sendBox">
+            <form class="forum-container" method="post">
                 <h2 for="title"><b>Message for <label asp-for="userLabel">@Model.userLabel</label></b></h2>
-                <textarea rows="5" cols="40" placeholder="Please write your message here" name="messageArea" id="messageArea" required> </textarea>
-                <button type="submit" class="button" id="send" onclick="@Model.sendMessage()">Send</button>
-                <button type="submit" class="button cancel" onclick="closeForum()">Close</button>
+                <textarea rows="5" cols="40" placeholder="Please write your message here" name="messageBox" id="messageBox" required> </textarea>
+                <button type="submit" class="button" id="send">Send</button>
             </form>
         </div>
     </div>
     <div class=right>
-        <div class="about">            
+        <div class="about">
             <p>
                 <label asp-for="aboutUser">@Model.aboutUser</label>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
@@ -68,9 +67,8 @@
 
 
     </div>
- <script src="~/js/firebaseScript.js"></script>
+    <script src="~/js/firebaseScript.js"></script>
 </body>
 
 
 </html>
-
