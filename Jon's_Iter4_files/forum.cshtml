@@ -1,0 +1,235 @@
+﻿@page
+@model CPSC361_ClassProject.Pages.forumModel
+@{
+    ViewData["Title"] = "forum";
+}
+
+<html>
+<head>
+    <title>Forum</title>
+    <meta charset='UTF-8'>
+    <script src="~/js/forum.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+
+    <script language="C#" runat="server">
+        void SubmitBtn_Click(Object sender, EventArgs e){
+            Message.Text="Testing";
+        }
+
+
+    </script>
+
+</head>
+
+<body class="forum-body">
+    <header class="header">
+        <div class="puppyforums">
+            <h1>Puppy Forums</h1>
+        </div>
+        <div class="writeforum">
+            <img class="pencil" alt="Avatar" src="images/writing_icon.png" onclick="openForum()">
+            <p>Start a forum!</p>
+        </div>
+        <div class="dogpic">
+            <img class="maltese" alt="Avatar" src="images/maltese.jpg">
+        </div>
+        <div class="forum-popup" id="myForm">
+            <!-- <forum action="/action_page.php" class="forum-container"> -->
+            <form class="forum-container">
+                <h2 for="title"><b>Title</b></h2>
+                <input type="title" placeholder="Enter Title Name" name="title" required>
+
+                <h2 for="text"><b>Text</b></h2>
+                <textarea rows="5" cols="62" placeholder="Text(Optional)" name="textarea"> </textarea>
+                <button type="submit" class="button" id="post" onclick="postForum()">Post</button>
+                <button type="submit" class="button cancel" onclick="closeForum()">Close</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="sidebar">
+            <div class=userpage>
+                <p align="center">Welcome back user!</p><br>
+                <a href="userprofile.html"><img class="avatar" alt="Avatar" src="images/IBM.jpg" href="userprofile.html"></a><br>
+                <p align="left">Connections: 0</p>
+                <p align="left">Following Forums: 1</p>
+            </div>
+
+            <div class="legal">
+                <p>   <a class="link" href="terms.cshtml">Terms</a>   </p>
+                <p>   <a class="link" href="privacy.cshtml">Privacy</a>   </p>
+                <p>   <a class="link" href="policy.cshtml">Policy</a>   </p>
+                <p>   <a class="link" href="cookies.cshtml">Cookies</a>   </p>
+            </div>
+
+        </section>
+
+        <section class=forumlist id="forumlist">
+
+            <!-- Jon: Forum Post Template-->
+            @{
+                Func<int, Microsoft.AspNetCore.Html.IHtmlContent> ForumPost =
+                @<div class=forumpost>
+                    <p id="forumbox" class="flex-container">
+                        <h3 id="forum-title">
+                            <label asp-for="forumTitles[item]">@Model.forumTitles[item]</label>
+                        </h3>
+                    </p><br>
+                    <p id="forum-text">
+                        <label asp-for="forumTexts[item]">@Model.forumTexts[item]</label>
+                    </p>
+                </div>;
+            }
+
+            <!-- Jon: Hard coded about user post, assuming this will always exist for each user at the top of the page-->
+            <div class=forumpost>
+                <p id="forumbox" class="flex-container">
+                    <h3 id="forum-title">
+                        <label asp-for="userLabel">@Model.userLabel</label>
+                    </h3>
+                </p><br>
+                <p id="forum-text">
+                    <label asp-for="aboutUser">@Model.aboutUser</label>
+                </p>
+            </div>
+
+
+            <!-- Jon: Curently shows the first 4 posts on page load -->
+            @{
+                int x = 0;
+                int y = Model.numPosts;
+                while (x < 4)
+                {
+                    @ForumPost(x)
+                    x++;
+                }
+            }
+
+        </section>
+
+        <!-- Jon: Empty space at end of posts to emphasize post loading-->
+        <pre>
+
+
+
+
+        </pre>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Jon: Script to load posts-->
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            // Premade posts (temporary)
+            var $newdiv = [`<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[0]">@Model.forumTitles[0]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[0]">@Model.forumTexts[0]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[1]">@Model.forumTitles[1]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[1]">@Model.forumTexts[1]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[2]">@Model.forumTitles[2]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[2]">@Model.forumTexts[2]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[3]">@Model.forumTitles[3]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[3]">@Model.forumTexts[3]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[4]">@Model.forumTitles[4]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[4]">@Model.forumTexts[4]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[5]">@Model.forumTitles[5]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[5]">@Model.forumTexts[5]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[6]">@Model.forumTitles[6]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[6]">@Model.forumTexts[6]</label>
+                                </p>
+                            </div>`,
+
+                            `<div class=forumpost>
+                                <p id="forumbox" class="flex-container">
+                                    <h3 id="forum-title">
+                                        <label asp-for="forumTitles[7]">@Model.forumTitles[7]</label>
+                                    </h3>
+                                </p><br>
+                                <p id="forum-text">
+                                    <label asp-for="forumTexts[7]">@Model.forumTexts[7]</label>
+                                </p>
+                            </div>`
+            ];
+            //Start on post [4] since the first 4 have already been loaded
+            var val = 4;
+
+            //Detect when user reaches end of page, load a post
+            document.addEventListener('scroll', function (event) {
+                if (document.body.scrollHeight == document.body.scrollTop + window.innerHeight) {
+                    if (val < @Model.numPosts) {
+                        $(".forumlist").append($newdiv[val]);
+                        val++;
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+
