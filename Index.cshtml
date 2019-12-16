@@ -1,0 +1,35 @@
+﻿@page
+@model CPSC_362_Project1.Pages.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="loginbox">
+        <h1 align="center">Networking App</h1>
+        <h2>Login Here</h2>
+        <form name="login-form" id="login-form">
+            <p>Username</p>
+            <input type="text" name="username">
+            <p>Password</p>
+            <input type="password" name="password"><br>
+            <button type="submit" name="login" value="Login">Login</button>
+            <button type="button" name="signup" id="signup" value="Sign Up" >Sign Up</button>
+
+            <img class="avatar" alt="Avatar" src="images/bro.jpg">
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="~/js/firebaseScript.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/global.js"></script>
+</body>
+</html>

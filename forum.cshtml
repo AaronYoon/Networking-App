@@ -1,0 +1,104 @@
+﻿@page
+@model CPSC361_ClassProject.Pages.forumModel
+@{
+    ViewData["Title"] = "forum";
+}
+
+<html>
+<head>
+    <title>Forum</title>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+</head>
+
+<body class="forum-body">
+    <header class="header">
+        <div class="puppyforums">
+            <h1>Puppy Forums</h1>
+        </div>
+        <div class="writeforum">
+            <img class="pencil" alt="Avatar" src="images/writing_icon.png" onclick="openForum()">
+            <p>Start a forum!</p>
+        </div>
+        <div>
+            <button type="button" name="logout" id="logout">Logout</button>
+        </div>
+        <div class="dogpic">
+            <img class="maltese" alt="Avatar" src="images/maltese.jpg">
+        </div>
+        <div class="forum-popup" id="myForm">
+            <!-- <forum action="/action_page.php" class="forum-container"> -->
+            <form class="forum-container">
+                <h2 for="title"><b>Title</b></h2>
+                <input type="title" placeholder="Enter Title Name" name="title" required>
+
+                <h2 for="text"><b>Text</b></h2>
+                <textarea rows="5" cols="62" placeholder="Text(Optional)" name="textarea"> </textarea>
+                <button type="submit" class="button" id="post" onclick="postForum()">Post</button>
+                <button type="submit" class="button cancel" onclick="closeForum()">Close</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="sidebar">
+            <div class=userpage>
+                <p align="center">Welcome back user!</p><br>
+                <a asp-page="./userprofile"><img class="avatar" alt="Avatar" src="images/IBM.jpg" asp-page="./userprofile"></a><br>
+                <p align="left">Connections: 0</p>
+                <p align="left">Following Forums: 1</p>
+            </div>
+
+            <div class="legal">
+                <p>   <a class="link" href="terms.html">Terms</a>   </p>
+                <p>   <a class="link" href="privacy.html">Privacy</a>   </p>
+                <p>   <a class="link" href="policy.html">Policy</a>   </p>
+                <p>   <a class="link" href="cookies.html">Cookies</a>   </p>
+            </div>
+
+        </section>
+
+        <section class=forumlist>
+            <!-- Sample HARD CODED Forum posts... Need to get it appending new forums when posted -->
+            <div class=forumpost>
+                <ul id="forumbox" class="flex-container">
+                    <h3>Cute Dog Videos</h3>
+                </ul><br>
+                <ul> Check out this cute puppy video tripping!</ul>
+            </div>
+            <div class=forumpost>
+                <ul id="forumbox" class="flex-container">
+                    <h3>Anyone interested in starting a puppy business?</h3>
+                </ul><br>
+                <ul> Here are some coupons for dog food and supplies at PetShop! </ul>
+            </div>
+            <div class=forumpost>
+                <ul id="forumbox" class="flex-container">
+                    <h3>How do I train a puppy? </h3>
+                </ul><br>
+                <ul>
+                    Help me sign this petition to get this person into jail! Make a difference a change in the world.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam nibh, rhoncus eu posuere nec, blandit et diam. Integer laoreet elit enim,
+                    sit amet vulputate nisi imperdiet id. In felis turpis, malesuada vel vestibulum bibendum, tristique vel sem. Mauris semper aliquam facilisis. Morbi
+                    sodales aliquam tempus. Ut eu eros at turpis dictum condimentum et scelerisque tortor. Quisque ut odio sit amet mauris eleifend bibendum. Nam hendrerit, tellus in venenatis imperdiet, velit dolor faucibus augue, at efficitur turpis tellus eget urna. Aliquam eros neque, aliquam vel ipsum a, aliquet rutrum est. In finibus orci nunc, sed ultrices nulla aliquam quis.
+                </ul>
+            </div>
+            <div class=forumpost>
+                <ul id="forumbox" class="flex-container">
+                    <h3>Have a wooftastic day!</h3>
+                </ul><br>
+                <ul> Here are some coupons for dog food and supplies at PetShop! </ul>
+            </div>
+        </section>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="~/js/firebaseScript.js"></script>
+    <script src="~/js/forum.js"></script>
+    <script src="~/js/global.js"></script>
+</body>
+
+</html>
+
+
